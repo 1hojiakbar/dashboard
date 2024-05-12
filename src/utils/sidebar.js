@@ -1,59 +1,46 @@
 // sidebar item svg
-import Summary from "../assets/icons/summary.svg?react";
-import Payment from "../assets/icons/payment.svg?react";
-import Cutomers from "../assets/icons/customers.svg?react";
-import Orders from "../assets/icons/orders.svg?react";
-
-// support svg
-import Setting from "../assets/icons/setting.svg?react";
-import Performance from "../assets/icons/performance.svg?react";
+import SummaryIcon from "../assets/icons/summary.svg?react";
+import PaymentIcon from "../assets/icons/payment.svg?react";
+import CustomersIcon from "../assets/icons/customers.svg?react";
+import OrdersIcon from "../assets/icons/orders.svg?react";
 
 // Generics
 import Generic from "../view/Generic";
 
+import Elements from "../pages/Summary/";
+
 // ------------------------------
 
 // sidebar items data
-const sidebar = [
+const sidebarData = [
   {
     id: 1,
     path: "/summary",
-    title: "Summary",
-    icon: Summary,
-    element: Generic,
+    label: "Summary",
+    icon: SummaryIcon,
+    element: Elements,
   },
   {
     id: 2,
     path: "/payment",
-    title: "Payment",
-    icon: Payment,
+    label: "Payment",
+    icon: PaymentIcon,
     element: Generic,
   },
   {
     id: 3,
     path: "/customers",
-    title: "Customers",
-    icon: Cutomers,
+    label: "Customers",
+    icon: CustomersIcon,
     element: Generic,
   },
-
-  { id: 4, path: "/orders", title: "Orders", icon: Orders, element: Generic },
-];
-
-export default sidebar;
-
-// support items data
-export const sidebarSupportData = [
   {
-    id: 1,
-    path: "/performance",
-    title: "Compare Performance",
-    icon: Performance,
-  },
-  {
-    id: 2,
-    path: "/setting",
-    title: "Setting",
-    icon: Setting,
+    id: 4,
+    path: "/orders",
+    label: "Orders",
+    icon: OrdersIcon,
+    element: Generic,
   },
 ];
+
+export default sidebarData;
