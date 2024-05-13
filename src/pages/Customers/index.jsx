@@ -1,57 +1,44 @@
+import Card from "./Card";
 import Select from "./Select";
 import ChartBox from "./ChartBox";
-import { Divider, Flex, Heading, useMediaQuery } from "@chakra-ui/react";
-import { Container, MainWrapper } from "./style";
-import { Tabs, TabList, Tab } from "@chakra-ui/react";
-import Card from "./Card";
+import CustomersLists from "./Lists";
 import BarChart from "../../charts/BarChart";
+import GenericTabs from "../../components/Generic/Tabs";
+import TopDivider from "../../components/Generic/Divider";
+import DownloadButton from "../../components/Generic/Button/download";
 import LineChartFunction from "../../charts/TinyLineChart";
-import SummaryLists from "./Lists";
+import { Container, MainWrapper } from "./style";
+import { Divider, Flex, Heading, useMediaQuery } from "@chakra-ui/react";
 
-function Summary() {
-  const [isLargerThan1690] = useMediaQuery("(max-width: 1690px)");
-
-  const style = {
-    color: "black",
-    bg: "white",
-    borderRadius: "10px",
-    transition: "all 250ms",
-  };
+function Customers() {
+  const [isLargerThan1200] = useMediaQuery("(max-width: 1200px)");
 
   return (
     <Container>
       <Heading
         as="h1"
         size="lg"
-        noOfLines={1}
         mb={"37px"}
-        style={{ marginRight: "auto" }}
+        style={{ marginRight: "auto", whiteSpace: "nowrap" }}
       >
-        Summary Dashboard
+        Customer Dashboard
       </Heading>
-      <Divider style={{ border: "1px solid #000" }} />
-      <Tabs bg={"rgba(105, 134, 237, 0.6)"} mt={"14px"} borderRadius={"10px"}>
-        <Tabs variant="unstyled" p={1} size={"md"}>
-          <TabList>
-            <Tab _selected={style}>Today</Tab>
-            <Tab _selected={style}>Yesterday</Tab>
-            <Tab _selected={style}>Week</Tab>
-            <Tab _selected={style}>Moth</Tab>
-          </TabList>
-        </Tabs>
-      </Tabs>
+      <TopDivider />
+      <TopDivider />
+      <GenericTabs />
+      <DownloadButton />
       <MainWrapper>
+        <Select />
         <Flex
           alignItems={"flex-start"}
-          flexDirection={isLargerThan1690 ? "column" : "row"}
+          flexDirection={isLargerThan1200 ? "column" : "row"}
           columnGap={"22px"}
-          rowGap={isLargerThan1690 ? "37px" : "0"}
+          w={"100%"}
+          rowGap={isLargerThan1200 ? "37px" : "0"}
         >
           <ChartBox />
           <Card />
         </Flex>
-        <Select />
-        <Divider style={{ border: "1px solid #000" }} />
         <Flex
           bg={"rgb(255, 255, 255)"}
           flexDirection={"column"}
@@ -79,7 +66,7 @@ function Summary() {
             m={"8px 0 27px 0"}
             style={{ border: "0.8px solid rgb(228, 229, 231)" }}
           />
-          <BarChart />
+          <BarChart lineSize={15} />
         </Flex>
         <Flex
           bg={"rgb(255, 255, 255)"}
@@ -111,13 +98,11 @@ function Summary() {
           <LineChartFunction />
         </Flex>
         <Flex>
-          <SummaryLists />
+          <CustomersLists />
         </Flex>
       </MainWrapper>
     </Container>
   );
 }
 
-export default Summary;
-
-// ant statistic
+export default Customers;

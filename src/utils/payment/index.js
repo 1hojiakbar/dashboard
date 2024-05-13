@@ -1,0 +1,138 @@
+export const tableTitle = [
+  {
+    id: 1,
+    name: "Select",
+    className: "tableTitle",
+  },
+  {
+    id: 2,
+    name: "Description",
+    className: "tableTitle",
+  },
+  {
+    id: 3,
+    name: "Payment By",
+    className: "tableTitle",
+  },
+  {
+    id: 4,
+    name: "Amout",
+    className: "tableTitle",
+  },
+  {
+    id: 5,
+    name: "ODER ID",
+    className: "tableTitle",
+  },
+  {
+    id: 6,
+    name: "ORDER DATE",
+    className: "tableTitle",
+  },
+  {
+    id: 7,
+    name: "Options",
+    className: "tableTitle",
+  },
+];
+
+const tableData = [
+  {
+    id: 1,
+    discp: "1 blue shirt",
+    payment: "Stripe",
+    amount: "2,897",
+    odrderId: 26,
+    orderDate: "6/3/22",
+  },
+  {
+    id: 2,
+    discp: "1 white shorts",
+    payment: "Paypal",
+    amount: "9,387",
+    odrderId: 35,
+    orderDate: "12/2/22",
+  },
+  {
+    id: 3,
+    discp: "1 red socks",
+    payment: "Paypal",
+    amount: "402",
+    odrderId: 48,
+    orderDate: "4/19/23",
+  },
+  {
+    id: 4,
+    discp: "1 yellow socks",
+    payment: "Paypal",
+    amount: "276",
+    odrderId: 90,
+    orderDate: "1/2/23",
+  },
+  {
+    id: 5,
+    discp: "1 green shirt",
+    payment: "Stripe",
+    amount: "276",
+    odrderId: 67,
+    orderDate: "9/4/23",
+  },
+  {
+    id: 6,
+    discp: "1 pink dress",
+    payment: "Stripe",
+    amount: "1,098",
+    odrderId: 35,
+    orderDate: "6/3/22",
+  },
+  {
+    id: 7,
+    discp: "1 white nail",
+    payment: "Stripe",
+    amount: "4,298",
+    odrderId: 48,
+    orderDate: "12/2/22",
+  },
+  {
+    id: 8,
+    discp: "1 green sock",
+    payment: "Stripe",
+    amount: "1,928",
+    odrderId: 90,
+    orderDate: "4/19/23",
+  },
+  {
+    id: 9,
+    discp: "1 think sock",
+    payment: "Stripe",
+    amount: "640",
+    odrderId: 67,
+    orderDate: "1/2/23",
+  },
+  {
+    id: 10,
+    discp: "1 blue shirt",
+    payment: "Stripe",
+    amount: "1,844",
+    odrderId: 35,
+    orderDate: "3/5/23",
+  },
+  {
+    id: 11,
+    discp: "1 yellow shirt",
+    payment: "Paypal",
+    amount: "1,098",
+    odrderId: 22,
+    orderDate: "6/2/22",
+  },
+  {
+    id: 12,
+    discp: "1 pink shirt",
+    payment: "Stripe",
+    amount: "276",
+    odrderId: 48,
+    orderDate: "3/10/23",
+  },
+];
+
+export default tableData;

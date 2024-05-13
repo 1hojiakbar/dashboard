@@ -7,7 +7,9 @@ import OrdersIcon from "../assets/icons/orders.svg?react";
 // Generics
 import Generic from "../view/Generic";
 
-import Elements from "../pages/Summary/";
+import Summary from "../pages/Summary/";
+import Customers from "../pages/Customers/";
+import Payment from "../pages/Payment";
 
 // ------------------------------
 
@@ -18,21 +20,21 @@ const sidebarData = [
     path: "/summary",
     label: "Summary",
     icon: SummaryIcon,
-    element: Elements,
+    element: Summary,
   },
   {
     id: 2,
     path: "/payment",
     label: "Payment",
     icon: PaymentIcon,
-    element: Generic,
+    element: Payment,
   },
   {
     id: 3,
     path: "/customers",
     label: "Customers",
     icon: CustomersIcon,
-    element: Generic,
+    element: Customers,
   },
   {
     id: 4,

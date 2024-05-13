@@ -1,16 +1,15 @@
-import React from "react";
-import chartData from "../../utils/summary/chartData";
 import { ChartCount, ChartDataText, ChartTitle } from "./style";
 import { Flex, Grid, GridItem, useMediaQuery } from "@chakra-ui/react";
+import chartData from "../../utils/customers/chartData";
 
 const ChartBox = () => {
-  const [isLargerThan1690] = useMediaQuery("(max-width: 1690px)");
+  const [isLargerThan1200] = useMediaQuery("(max-width: 1200px)");
   return (
     <>
       <Flex
         columnGap={"26px"}
         justifyContent={"space-between"}
-        w={isLargerThan1690 ? "100%" : "50%"}
+        w={isLargerThan1200 ? "100%" : "50%"}
         flexDirection={"row"}
       >
         {chartData.map((value) => {
@@ -19,7 +18,7 @@ const ChartBox = () => {
             <Grid
               templateAreas={`"title title" "count count" "text chart"`}
               gridTemplateRows={"25px 25px 1fr"}
-              gridTemplateColumns={isLargerThan1690 ? "1fr" : "1fr 1fr"}
+              gridTemplateColumns={isLargerThan1200 ? "1fr" : "1fr 1fr"}
               w="100%"
               gap="1"
               key={value.id}

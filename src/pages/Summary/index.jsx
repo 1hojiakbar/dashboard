@@ -1,45 +1,38 @@
+import Card from "./Card";
 import Select from "./Select";
 import ChartBox from "./ChartBox";
-import { Divider, Flex, Heading, useMediaQuery } from "@chakra-ui/react";
-import { Container, MainWrapper } from "./style";
-import { Tabs, TabList, Tab } from "@chakra-ui/react";
-import Card from "./Card";
-import BarChart from "../../charts/BarChart";
-import LineChartFunction from "../../charts/TinyLineChart";
 import SummaryLists from "./Lists";
+import BarChart from "../../charts/BarChart";
+import GenericTabs from "../../components/Generic/Tabs";
+import TopDivider from "../../components/Generic/Divider";
+import LineChartFunction from "../../charts/TinyLineChart";
+import { DownloadIcon } from "@chakra-ui/icons";
+import { Container, MainWrapper } from "./style";
+import {
+  Button,
+  Divider,
+  Flex,
+  Heading,
+  useMediaQuery,
+} from "@chakra-ui/react";
+import DownloadButton from "../../components/Generic/Button/download";
 
 function Summary() {
   const [isLargerThan1690] = useMediaQuery("(max-width: 1690px)");
-
-  const style = {
-    color: "black",
-    bg: "white",
-    borderRadius: "10px",
-    transition: "all 250ms",
-  };
 
   return (
     <Container>
       <Heading
         as="h1"
         size="lg"
-        noOfLines={1}
         mb={"37px"}
-        style={{ marginRight: "auto" }}
+        style={{ marginRight: "auto", whiteSpace: "nowrap" }}
       >
         Summary Dashboard
       </Heading>
       <Divider style={{ border: "1px solid #000" }} />
-      <Tabs bg={"rgba(105, 134, 237, 0.6)"} mt={"14px"} borderRadius={"10px"}>
-        <Tabs variant="unstyled" p={1} size={"md"}>
-          <TabList>
-            <Tab _selected={style}>Today</Tab>
-            <Tab _selected={style}>Yesterday</Tab>
-            <Tab _selected={style}>Week</Tab>
-            <Tab _selected={style}>Moth</Tab>
-          </TabList>
-        </Tabs>
-      </Tabs>
+      <GenericTabs />
+      <DownloadButton />
       <MainWrapper>
         <Flex
           alignItems={"flex-start"}
@@ -51,7 +44,7 @@ function Summary() {
           <Card />
         </Flex>
         <Select />
-        <Divider style={{ border: "1px solid #000" }} />
+        <TopDivider />
         <Flex
           bg={"rgb(255, 255, 255)"}
           flexDirection={"column"}
@@ -79,7 +72,7 @@ function Summary() {
             m={"8px 0 27px 0"}
             style={{ border: "0.8px solid rgb(228, 229, 231)" }}
           />
-          <BarChart />
+          <BarChart lineSize={12} />
         </Flex>
         <Flex
           bg={"rgb(255, 255, 255)"}

@@ -57,6 +57,7 @@ const SummaryLists = () => {
             {utmSources.map((value) => {
               return (
                 <ListItem
+                  key={value.id}
                   display={"grid"}
                   gridTemplateColumns={"1fr auto"}
                   w={"100%"}
@@ -138,6 +139,7 @@ const SummaryLists = () => {
             {adminActivity.map((value) => {
               return (
                 <ListItem
+                  key={value.id}
                   display={"grid"}
                   gridTemplateColumns={"1fr auto"}
                   w={"100%"}
@@ -219,6 +221,7 @@ const SummaryLists = () => {
             {topInfluencers.map((value) => {
               return (
                 <ListItem
+                  key={value.id}
                   display={"grid"}
                   gridTemplateColumns={"1fr auto"}
                   w={"100%"}

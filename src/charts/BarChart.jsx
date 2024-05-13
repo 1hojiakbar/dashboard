@@ -83,14 +83,14 @@ const data = [
   },
 ];
 
-const BarChartNoPadding = () => {
+const BarChartNoPadding = ({ lineSize }) => {
   return (
     <ResponsiveContainer
       width="100%"
       height={300}
       style={{ marginLeft: "-40px" }}
     >
-      <BarChart data={data} barSize={12}>
+      <BarChart data={data} barSize={lineSize}>
         <XAxis dataKey="name" padding={{ left: 0, right: 0 }} />
         <YAxis dataKey={"pv"} />
         <Tooltip />
