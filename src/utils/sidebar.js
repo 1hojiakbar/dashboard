@@ -10,6 +10,7 @@ import Generic from "../view/Generic";
 import Summary from "../pages/Summary/";
 import Customers from "../pages/Customers/";
 import Payment from "../pages/Payment";
+import Orders from "../pages/Orders";
 
 // ------------------------------
 
@@ -41,7 +42,7 @@ const sidebarData = [
     path: "/orders",
     label: "Orders",
     icon: OrdersIcon,
-    element: Generic,
+    element: Orders,
   },
 ];
 

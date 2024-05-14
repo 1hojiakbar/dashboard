@@ -1,11 +1,7 @@
 import { Button } from "@chakra-ui/react";
 
-function GenericButton({ children, ...data }) {
-  return (
-    <>
-      <Button {...data}>{children}</Button>
-    </>
-  );
-}
+const GenericButton = ({ children, ...props }) => {
+  return <Button {...props}>{children}</Button>;
+};
 
 export default GenericButton;

@@ -78,20 +78,12 @@ Logo.Image = styled.img`
   height: 29px;
 `;
 
-const Menu = styled.div`
-  ${flex}
-  flex-direction: column;
-  row-gap: 16px;
-  justify-content: center;
-  align-items: center;
-  padding: 20px 0 0 15px;
-`;
-
 const MenuItems = styled(NavLink)`
   ${flex}
   margin: 0 auto;
   text-decoration: none;
   user-select: none;
+  margin: 14px 0;
   font-weight: ${({ active }) => active === "true" && "700"};
   background-color: ${({ active }) =>
     active === "true" && `rgba(27, 89, 248, 0.1)`};
@@ -180,7 +172,7 @@ export {
   WrapperOfOutlet,
   Side,
   Logo,
-  Menu,
+  // Menu,
   MenuItems,
   SideSupportWrapper,
   SupportItem,
