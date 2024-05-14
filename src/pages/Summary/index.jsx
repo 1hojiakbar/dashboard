@@ -6,15 +6,8 @@ import BarChart from "../../charts/BarChart";
 import GenericTabs from "../../components/Generic/Tabs";
 import TopDivider from "../../components/Generic/Divider";
 import LineChartFunction from "../../charts/TinyLineChart";
-import { DownloadIcon } from "@chakra-ui/icons";
 import { Container, MainWrapper } from "./style";
-import {
-  Button,
-  Divider,
-  Flex,
-  Heading,
-  useMediaQuery,
-} from "@chakra-ui/react";
+import { Divider, Flex, Heading, useMediaQuery } from "@chakra-ui/react";
 import DownloadButton from "../../components/Generic/Button/download";
 
 function Summary() {

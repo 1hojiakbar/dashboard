@@ -1,17 +1,19 @@
-import React from "react";
 import chartData from "../../utils/summary/chartData";
 import { ChartCount, ChartDataText, ChartTitle } from "./style";
 import { Flex, Grid, GridItem, useMediaQuery } from "@chakra-ui/react";
 
 const ChartBox = () => {
   const [isLargerThan1690] = useMediaQuery("(max-width: 1690px)");
+  const [isLargerThan800] = useMediaQuery("(max-width: 800px)");
+
   return (
     <>
       <Flex
         columnGap={"26px"}
         justifyContent={"space-between"}
-        w={isLargerThan1690 ? "100%" : "50%"}
-        flexDirection={"row"}
+        w={isLargerThan1690 || isLargerThan800 ? "100%" : "50%"}
+        flexDirection={isLargerThan800 ? "column" : "row"}
+        rowGap={isLargerThan800 && "26px"}
       >
         {chartData.map((value) => {
           const { chart: Chart } = value;

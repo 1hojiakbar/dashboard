@@ -1,12 +1,21 @@
-import { Table, TableContainer, Th, Thead, Tr } from "@chakra-ui/react";
+import {
+  Table,
+  TableContainer,
+  Th,
+  Thead,
+  Tr,
+  useMediaQuery,
+} from "@chakra-ui/react";
 import PaymentTableBody from "./TableBody";
 import { tableTitle } from "../../utils/payment";
 
 const PaymentTable = () => {
+  const [isLargerThan800] = useMediaQuery("(max-width: 870px)");
+
   return (
     <>
       <TableContainer>
-        <Table variant="simple" w={"100%"} m={"0"} size={"sm"}>
+        <Table variant="simple" w={"100%"} size={isLargerThan800 ? "sm" : "md"}>
           <Thead>
             <Tr>
               {tableTitle.map((value) => {

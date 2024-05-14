@@ -10,13 +10,16 @@ import {
   Th,
   Thead,
   Tr,
+  useMediaQuery,
 } from "@chakra-ui/react";
 
 const OrdersTable = () => {
+  const [isLargerThan800] = useMediaQuery("(max-width: 870px)");
+
   return (
     <>
       <TableContainer>
-        <Table variant="simple" w={"100%"} size={"sm"}>
+        <Table variant="simple" w={"100%"} size={isLargerThan800 ? "sm" : "md"}>
           <Thead>
             <Tr>
               {tableTitle.map((value) => {

@@ -11,14 +11,14 @@ import cardData, { bottomCardData } from "../../utils/summary/cardData";
 
 const SummaryCard = () => {
   const [isLargerThan1690] = useMediaQuery("(max-width: 1690px)");
+  const [isLargerThan800] = useMediaQuery("(max-width: 800px)");
 
   return (
     <Flex flexDirection={"column"} w={isLargerThan1690 ? "100%" : "50%"}>
       {/* top cards */}
       <SimpleGrid
         spacing={4}
-        // templateColumns="repeat(auto-fill, minmax(168px, 1fr))"
-        templateColumns="1fr 1fr 1fr"
+        templateColumns={isLargerThan800 ? "1fr" : "1fr 1fr 1fr"}
       >
         {cardData.map((value) => {
           return (
@@ -58,8 +58,7 @@ const SummaryCard = () => {
       {/* bottom cards */}
       <SimpleGrid
         spacing={4}
-        // templateColumns="repeat(auto-fill, minmax(168px, 1fr))"
-        templateColumns="1fr 1fr 1fr"
+        templateColumns={isLargerThan800 ? "1fr" : "1fr 1fr 1fr"}
       >
         {bottomCardData.map((value) => {
           return (
