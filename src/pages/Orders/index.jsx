@@ -43,7 +43,7 @@ const Orders = () => {
             whiteSpace={"nowrap"}
             style={{ display: "flex", alignItems: "center", columnGap: "20px" }}
           >
-            Details <Text color={"rgba(47, 47, 47, 0.4)"}>258</Text>
+            Post Paid <Text color={"rgba(47, 47, 47, 0.4)"}>258</Text>
           </Heading>
           <Divider
             border={"0.8px solid rgb(228, 229, 231)"}

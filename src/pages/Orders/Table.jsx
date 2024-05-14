@@ -1,18 +1,37 @@
-import { Table, TableContainer, Th, Thead, Tr } from "@chakra-ui/react";
-import { tableTitle } from "../../utils/payment";
 import OrdersTableBody from "./TableBody";
+import { tableTitle } from "../../utils/orders/index";
+import { SearchIcon } from "@chakra-ui/icons";
+import {
+  Input,
+  InputGroup,
+  InputLeftElement,
+  Table,
+  TableContainer,
+  Th,
+  Thead,
+  Tr,
+} from "@chakra-ui/react";
 
 const OrdersTable = () => {
   return (
     <>
       <TableContainer>
-        <Table variant="simple" w={"100%"} m={"0"} size={"sm"}>
+        <Table variant="simple" w={"100%"} size={"sm"}>
           <Thead>
             <Tr>
               {tableTitle.map((value) => {
                 return (
-                  <Th key={value.id} className={value.className}>
-                    {value.name}
+                  <Th key={value.id} className={value.className} w={"35%"}>
+                    {value.searchInput ? (
+                      <InputGroup>
+                        <InputLeftElement pointerEvents="none">
+                          <SearchIcon color="gray.300" />
+                        </InputLeftElement>
+                        <Input type="tel" placeholder="Phone number" />
+                      </InputGroup>
+                    ) : (
+                      value.title
+                    )}
                   </Th>
                 );
               })}

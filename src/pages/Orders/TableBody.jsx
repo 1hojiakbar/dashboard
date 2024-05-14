@@ -1,15 +1,16 @@
 import { useState } from "react";
-import tableData from "../../utils/payment";
+import tableData from "../../utils/orders/index";
 import GenericButton from "../../components/Generic/Button";
 import MeuIcon from "../../assets/icons/menu-icon.svg?react";
 import {
+  Checkbox,
+  Image,
   Input,
   Menu,
   MenuButton,
   MenuItem,
   MenuList,
   Portal,
-  Radio,
   Tbody,
   Td,
   Tr,
@@ -38,7 +39,7 @@ const OrdersTableBody = () => {
 
   const onSaveData = () => {
     const updatedList = list.map((item) =>
-      item.id === selected.select.id ? { ...item, discp: newData } : item
+      item.id === selected.select.id ? { ...item, activeUsers: newData } : item
     );
     setList(updatedList);
     setSelected({ select: null });
@@ -51,22 +52,26 @@ const OrdersTableBody = () => {
         {list.map((value) => {
           return (
             <Tr color={"rgb(112, 118, 140)"} key={value.id}>
-              <Td>
-                <Radio size="lg" name="1" colorScheme="blue" />
+              <Td display={"flex"} alignItems={"center"} columnGap={"20px"}>
+                <Checkbox size="lg" colorScheme="blue" />
+                <Image
+                  src={value.img}
+                  w={"60px"}
+                  h={" 42px"}
+                  userSelect={"none"}
+                />
               </Td>
               <Td>
                 {selected.select?.id == value.id ? (
                   <Input
-                    defaultValue={selected.select.discp}
+                    defaultValue={selected.select.activeUsers}
                     onChange={({ target }) => setnewData(target.value)}
                   />
                 ) : (
-                  value.discp
+                  value.activeUsers
                 )}
               </Td>
-              <Td>{value.payment}</Td>
-              <Td>{value.amount}</Td>
-              <Td>{value.odrderId}</Td>
+              <Td>{value.userId}</Td>
               <Td>{value.orderDate}</Td>
               <Td>
                 <Menu>
@@ -86,9 +91,7 @@ const OrdersTableBody = () => {
                       <MenuItem onClick={() => onRemove(value.id)}>
                         Remove
                       </MenuItem>
-                      <MenuItem onClick={() => onSelect(value)}>
-                        Edit Description
-                      </MenuItem>
+                      <MenuItem onClick={() => onSelect(value)}>Edit</MenuItem>
                     </MenuList>
                   </Portal>
                 </Menu>

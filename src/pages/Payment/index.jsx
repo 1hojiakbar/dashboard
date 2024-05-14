@@ -11,7 +11,7 @@ const Payment = () => {
       <Heading
         as="h1"
         size="lg"
-        noOfLines={1}
+        w={"100%"}
         mb={"37px"}
         style={{ marginRight: "auto" }}
       >
@@ -22,7 +22,7 @@ const Payment = () => {
         <GenericTabs />
       </Flex>
       <DownloadButton />
-      <Flex>
+      <Flex w={"100%"}>
         <Flex
           border={"1px solid rgb(239, 240, 246)"}
           borderRadius={"20px"}

@@ -24,7 +24,6 @@ function Customers() {
         Customer Dashboard
       </Heading>
       <TopDivider />
-      <TopDivider />
       <GenericTabs />
       <DownloadButton />
       <MainWrapper>
