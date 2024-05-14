@@ -4,7 +4,7 @@ import { Box, Flex, Heading, Spacer } from "@chakra-ui/react";
 import { Logo, MenuItems } from "./style";
 import logo from "../../assets/images/logo.png";
 
-const SidebarContent = () => {
+const SidebarContent = ({ close }) => {
   const location = useLocation();
 
   return (
@@ -25,6 +25,7 @@ const SidebarContent = () => {
           <MenuItems
             key={value.id}
             to={value.path}
+            onClick={close}
             active={activePath.toString()}
           >
             <MenuItems.Title active={activePath.toString()}>

@@ -25,29 +25,35 @@ const Sidebar = () => {
           <SidebarContent />
         </Side>
       ) : (
-        <IconButton
-          icon={<HamburgerIcon />}
-          variant="outline"
-          aria-label="Open Menu"
-          onClick={onOpen}
-          position="fixed"
-          top="10px"
-          left="10px"
-          zIndex="overlay"
-        />
+        <>
+          <IconButton
+            icon={<HamburgerIcon />}
+            variant="outline"
+            aria-label="Open Menu"
+            onClick={onOpen}
+            bg={"#000"}
+            color={"#fff"}
+            position="fixed"
+            top="10px"
+            left="10px"
+            zIndex="overlay"
+          />
+        </>
       )}
       <Drawer isOpen={isOpen} placement="top" onClose={onClose}>
         <DrawerOverlay />
         <DrawerContent h={"full"}>
           <DrawerBody>
             <DrawerCloseButton mr={1} onClick={onClose} color={"black"} />
-            <SidebarContent />
+            <SidebarContent close={onClose} />
           </DrawerBody>
         </DrawerContent>
       </Drawer>
       <Box flex="1">
         <Body>
-          <WrapperOfOutlet>
+          <WrapperOfOutlet
+            style={{ marginTop: isLargerThan992 ? "0" : "50px" }}
+          >
             <Outlet />
           </WrapperOfOutlet>
         </Body>

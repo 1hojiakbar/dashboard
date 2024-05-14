@@ -1,5 +1,5 @@
 import OrdersTableBody from "./TableBody";
-import { tableTitle } from "../../utils/orders/index";
+import tableData, { tableTitle } from "../../utils/orders/index";
 import { SearchIcon } from "@chakra-ui/icons";
 import {
   Input,
@@ -27,7 +27,11 @@ const OrdersTable = () => {
                         <InputLeftElement pointerEvents="none">
                           <SearchIcon color="gray.300" />
                         </InputLeftElement>
-                        <Input type="tel" placeholder="Phone number" />
+                        <Input
+                          type="tel"
+                          placeholder="Search"
+                          autoComplete="off"
+                        />
                       </InputGroup>
                     ) : (
                       value.title

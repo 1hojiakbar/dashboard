@@ -1,5 +1,4 @@
-import { useState } from "react";
-import tableData from "../../utils/orders/index";
+import { useEffect, useState } from "react";
 import GenericButton from "../../components/Generic/Button";
 import MeuIcon from "../../assets/icons/menu-icon.svg?react";
 import {
@@ -15,6 +14,7 @@ import {
   Td,
   Tr,
 } from "@chakra-ui/react";
+import tableData from "../../utils/orders";
 
 const OrdersTableBody = () => {
   const [list, setList] = useState(tableData);
