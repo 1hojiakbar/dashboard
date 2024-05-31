@@ -8,10 +8,6 @@
   font-family: Inter;
 }
 
-::-webkit-scrollbar {
-  width: 0;
-}
-
 :root {
   --grayColor: rgb(77, 77, 77);
   --activeColor: rgb(27, 89, 248);
@@ -29,6 +25,10 @@ body {
     rgba(255, 123, 172, 0.81) 9.929%,
     rgba(67, 165, 220, 0.62) 80.828%
   );
+}
+
+::-webkit-scrollbar {
+  scrollbar-width: none;
 }
 
 code {

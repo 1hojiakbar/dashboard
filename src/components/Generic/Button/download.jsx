@@ -8,6 +8,7 @@ const DownloadButton = () => {
         display={"flex"}
         alignItems={"center"}
         p={"14px"}
+        m={"7px 0 7px 0"}
         columnGap={"8px"}
         colorScheme="blue"
         variant="ghost"
