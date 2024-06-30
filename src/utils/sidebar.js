@@ -4,9 +4,6 @@ import PaymentIcon from "../assets/icons/payment.svg?react";
 import CustomersIcon from "../assets/icons/customers.svg?react";
 import OrdersIcon from "../assets/icons/orders.svg?react";
 
-// Generics
-import Generic from "../view/Generic";
-
 import Summary from "../pages/Summary/";
 import Customers from "../pages/Customers/";
 import Payment from "../pages/Payment";
